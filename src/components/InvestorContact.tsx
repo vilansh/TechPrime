@@ -9,18 +9,18 @@ const conversationMailto = `${mailto}?subject=${encodeURIComponent("Starting a c
 export function InvestorContact() {
   return (
     <section id="contact" aria-labelledby="contact-title" className="grain relative bg-brand-ink text-paper">
-      <div className="container-x grid gap-16 py-24 md:py-36 lg:grid-cols-12 lg:gap-12">
+      <div className="container-x grid gap-12 py-16 md:py-24 lg:grid-cols-12 lg:gap-12">
         <div className="lg:col-span-6">
           <Reveal>
             <SectionLabel index="06" label="Investors & Partners" tone="dark" />
           </Reveal>
           <Reveal delay={0.08}>
-            <h2 id="contact-title" className="display mt-8 text-[clamp(2.8rem,6vw,5.6rem)]">
+            <h2 id="contact-title" className="display mt-6 text-[clamp(2.6rem,5vw,4.5rem)]">
               Let&rsquo;s Build <em className="text-accent-soft">What&rsquo;s Next.</em>
             </h2>
           </Reveal>
           <Reveal delay={0.14}>
-            <div className="mt-10 max-w-lg space-y-5 text-[16px] leading-[1.85] text-paper/70">
+            <div className="mt-6 max-w-lg space-y-4 text-[16px] leading-[1.85] text-paper/70">
               <p>
                 We are building businesses with the ambition to create meaningful value across multiple
                 industries.
@@ -33,7 +33,7 @@ export function InvestorContact() {
           </Reveal>
 
           <Reveal delay={0.2}>
-            <div className="mt-12 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <a
                 href={conversationMailto}
                 className="group inline-flex items-center justify-center gap-3 bg-accent px-7 py-4 text-[12px] font-semibold tracking-[0.16em] text-brand-ink uppercase transition-colors duration-300 hover:bg-accent-soft"
@@ -51,7 +51,7 @@ export function InvestorContact() {
           </Reveal>
 
           <Reveal delay={0.24}>
-            <dl className="mt-16 grid gap-8 border-t border-paper/15 pt-10 sm:grid-cols-2">
+            <dl className="mt-10 grid gap-8 border-t border-paper/15 pt-8 sm:grid-cols-2">
               <div>
                 <dt className="eyebrow flex items-center gap-2 text-[10px] text-accent-soft">
                   <Mail aria-hidden className="size-3.5" /> Email

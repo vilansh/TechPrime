@@ -16,7 +16,7 @@ const visuals: Record<VentureKey, () => React.JSX.Element> = {
 
 /** Each venture carries its own wordmark so they read as independent brands. */
 function Wordmark({ venture, dark }: { venture: Venture; dark: boolean }) {
-  const base = "text-[clamp(2.9rem,5.4vw,4.9rem)] leading-none";
+  const base = "text-[clamp(2.4rem,4.2vw,3.75rem)] leading-none";
   switch (venture.key) {
     case "drivers24":
       return (
@@ -60,7 +60,7 @@ function VentureShowcase({ venture, reverse }: { venture: Venture; reverse: bool
     <article
       id={`venture-${venture.key}`}
       aria-labelledby={`${venture.key}-name`}
-      className={`${section} py-20 md:py-28`}
+      className={`${section} py-12 md:py-16`}
     >
       <div className="container-x">
         {/* Meta strip */}
@@ -75,14 +75,14 @@ function VentureShowcase({ venture, reverse }: { venture: Venture; reverse: bool
           </div>
         </Reveal>
 
-        <div className="mt-12 grid items-center gap-12 lg:mt-16 lg:grid-cols-12 lg:gap-16">
-          <Reveal className={`lg:col-span-6 ${reverse ? "lg:order-2" : ""}`} y={32}>
+        <div className="mt-8 grid items-center gap-10 lg:mt-10 lg:grid-cols-12 lg:gap-14">
+          <Reveal className={`lg:col-span-5 ${reverse ? "lg:order-2" : ""}`} y={32}>
             <div className="transition-transform duration-700 ease-[var(--ease-editorial)] hover:scale-[1.01]">
               <Visual />
             </div>
           </Reveal>
 
-          <div className={`lg:col-span-6 ${reverse ? "lg:order-1" : ""}`}>
+          <div className={`lg:col-span-7 ${reverse ? "lg:order-1" : ""}`}>
             <Reveal delay={0.06}>
               <p className={`eyebrow md:hidden ${muted}`}>{venture.industry}</p>
               <h3 id={`${venture.key}-name`} className="mt-3 md:mt-0">
@@ -92,14 +92,14 @@ function VentureShowcase({ venture, reverse }: { venture: Venture; reverse: bool
             </Reveal>
 
             <Reveal delay={0.12}>
-              <p className={`display mt-8 !font-medium text-[1.55rem] md:text-[1.9rem] ${dark ? "text-accent-soft" : "text-brand"}`}>
+              <p className={`display mt-5 !font-medium text-[1.35rem] md:text-[1.6rem] ${dark ? "text-accent-soft" : "text-brand"}`}>
                 &ldquo;{venture.tagline}&rdquo;
               </p>
-              <p className={`mt-6 max-w-xl text-[16px] leading-[1.8] ${muted}`}>{venture.description}</p>
+              <p className={`mt-4 max-w-xl text-[16px] leading-[1.8] ${muted}`}>{venture.description}</p>
             </Reveal>
 
             <Reveal delay={0.18}>
-              <div className={`mt-10 border-t pt-7 ${rule}`}>
+              <div className={`mt-7 border-t pt-6 ${rule}`}>
                 <p className={`eyebrow ${strong}`}>Core features</p>
                 <ul className="mt-5 grid gap-x-8 gap-y-3 sm:grid-cols-2">
                   {venture.features.map((f) => (
@@ -113,7 +113,7 @@ function VentureShowcase({ venture, reverse }: { venture: Venture; reverse: bool
             </Reveal>
 
             <Reveal delay={0.22}>
-              <div className="mt-10">
+              <div className="mt-7">
                 <button
                   type="button"
                   aria-expanded={open}
@@ -178,7 +178,7 @@ function VentureShowcase({ venture, reverse }: { venture: Venture; reverse: bool
 export function Ventures() {
   return (
     <section id="ventures" aria-labelledby="ventures-title">
-      <div className="bg-paper pt-24 md:pt-36">
+      <div className="bg-paper pt-16 md:pt-24">
         <div className="container-x">
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-8">
@@ -204,7 +204,7 @@ export function Ventures() {
 
           {/* Index of ventures */}
           <Reveal delay={0.1}>
-            <nav aria-label="Venture index" className="mt-16 grid border-t border-ink md:grid-cols-3">
+            <nav aria-label="Venture index" className="mt-10 grid border-t border-ink md:grid-cols-3">
               {ventures.map((v, i) => (
                 <a
                   key={v.key}

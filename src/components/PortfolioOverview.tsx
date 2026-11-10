@@ -88,7 +88,7 @@ function EcosystemMobile() {
 
 export function PortfolioOverview() {
   return (
-    <section id="portfolio" aria-labelledby="portfolio-title" className="bg-ivory py-24 md:py-36">
+    <section id="portfolio" aria-labelledby="portfolio-title" className="bg-ivory py-16 md:py-24">
       <div className="container-x">
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-7">
@@ -96,7 +96,7 @@ export function PortfolioOverview() {
               <SectionLabel index="03" label="Portfolio Overview" />
             </Reveal>
             <Reveal delay={0.08}>
-              <h2 id="portfolio-title" className="display mt-8 text-[clamp(2.4rem,4.8vw,4.5rem)] text-ink">
+              <h2 id="portfolio-title" className="display mt-6 text-[clamp(2.4rem,4.8vw,4.5rem)] text-ink">
                 Expanding Into Markets <em className="text-stone">That Matter.</em>
               </h2>
             </Reveal>
@@ -112,7 +112,7 @@ export function PortfolioOverview() {
         </div>
 
         <Reveal delay={0.1}>
-          <div className="mt-16 md:mt-20">
+          <div className="mt-10 md:mt-12">
             <EcosystemGraphic />
             <EcosystemMobile />
           </div>

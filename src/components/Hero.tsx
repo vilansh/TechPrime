@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { HeroVisual } from "./visuals/HeroVisual";
 import { Reveal } from "./Reveal";
 
@@ -20,7 +20,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="container-x relative grid gap-14 pb-16 pt-14 md:pt-20 lg:grid-cols-12 lg:gap-10 lg:pb-24 lg:pt-24">
+      <div className="container-x relative grid gap-14 pb-12 pt-10 md:pt-14 lg:grid-cols-12 lg:gap-10 lg:pb-16 lg:pt-16">
         <div className="flex flex-col justify-center lg:col-span-7 lg:pr-6">
           <Reveal>
             <p className="eyebrow flex items-center gap-4 text-brand">
@@ -32,7 +32,7 @@ export function Hero() {
           <Reveal delay={0.08}>
             <h1
               id="hero-title"
-              className="display mt-8 text-[clamp(3rem,7.4vw,7.25rem)] text-ink"
+              className="display mt-6 text-[clamp(2.75rem,6vw,6rem)] text-ink"
             >
               Building Businesses.
               <span className="mt-1 block text-stone">
@@ -42,7 +42,7 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={0.16}>
-            <p className="mt-9 max-w-[34rem] text-[17px] leading-[1.75] text-stone">
+            <p className="mt-6 max-w-[34rem] text-[17px] leading-[1.75] text-stone">
               Tech Prime Global is a multi-venture business group focused on building
               technology-enabled businesses that simplify everyday experiences, unlock market
               opportunities, and create lasting value.
@@ -50,7 +50,7 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={0.24}>
-            <div className="mt-11 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
               <a
                 href="#ventures"
                 className="group inline-flex items-center justify-center gap-3 bg-brand px-7 py-4 text-[12px] font-semibold tracking-[0.16em] text-paper uppercase transition-colors duration-300 hover:bg-brand-deep"
@@ -69,7 +69,7 @@ export function Hero() {
         </div>
 
         <Reveal delay={0.1} className="lg:col-span-5">
-          <div className="mx-auto max-w-[480px] lg:ml-auto">
+          <div className="mx-auto max-w-[400px] lg:ml-auto">
             <HeroVisual />
           </div>
         </Reveal>
@@ -81,7 +81,7 @@ export function Hero() {
           {metrics.map((m, i) => (
             <div
               key={m.label}
-              className={`flex flex-col gap-3 py-8 md:py-10 ${
+              className={`flex flex-col gap-3 py-6 md:py-7 ${
                 i % 2 === 1 ? "border-l border-line pl-5 md:pl-8" : ""
               } ${i === 2 ? "border-t border-line lg:border-l lg:border-t-0 lg:pl-8" : ""} ${
                 i === 3 ? "border-t border-line lg:border-t-0" : ""
@@ -100,12 +100,6 @@ export function Hero() {
             </div>
           ))}
         </dl>
-      </div>
-
-      <div className="container-x hidden justify-end py-5 lg:flex">
-        <a href="#about" className="eyebrow inline-flex items-center gap-2 text-stone hover:text-brand">
-          Scroll <ArrowDown aria-hidden className="size-3.5" />
-        </a>
       </div>
     </section>
   );

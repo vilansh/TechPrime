@@ -18,30 +18,26 @@ const principles = [
   },
 ];
 
-/** Principles set as editorial ledger rows rather than cards. */
+/** Principles as a compact three-column row divided by hairlines. */
 export function CompanyPrinciples() {
   return (
-    <div className="mt-24 md:mt-32">
+    <div className="mt-12 md:mt-16">
       <Reveal>
-        <div className="flex items-end justify-between border-b border-ink pb-5">
+        <div className="flex items-end justify-between border-b border-ink pb-4">
           <h3 className="eyebrow text-ink">How We Build</h3>
-          <span className="font-display text-sm text-stone">Three principles</span>
+          <span className="text-[13px] text-stone">Three principles</span>
         </div>
       </Reveal>
-      <ol>
+      <ol className="grid md:grid-cols-3">
         {principles.map((p, i) => (
-          <li key={p.n}>
+          <li key={p.n} className={`border-b border-line md:border-b-0 ${i > 0 ? "md:border-l md:pl-8" : ""} ${i < 2 ? "md:pr-8" : ""}`}>
             <Reveal delay={i * 0.08}>
-              <div className="group grid gap-4 border-b border-line py-10 transition-colors duration-500 hover:bg-paper/70 md:grid-cols-12 md:items-baseline md:gap-8 md:px-4 md:py-12">
-                <span className="display text-[3.25rem] text-accent transition-colors duration-500 group-hover:text-brand md:col-span-2 md:text-[4.5rem]">
+              <div className="group py-7 md:py-9">
+                <span className="display text-[2rem] text-accent transition-colors duration-500 group-hover:text-brand">
                   {p.n}
                 </span>
-                <h4 className="display text-[1.85rem] text-ink md:col-span-4 md:text-[2.3rem]">
-                  {p.title}
-                </h4>
-                <p className="max-w-md text-[15.5px] leading-[1.8] text-stone md:col-span-5 md:col-start-8">
-                  {p.body}
-                </p>
+                <h4 className="display mt-3 text-[1.45rem] text-ink">{p.title}</h4>
+                <p className="mt-3 text-[15px] leading-[1.7] text-stone">{p.body}</p>
               </div>
             </Reveal>
           </li>

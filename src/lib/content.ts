@@ -117,3 +117,36 @@ export const ventures: Venture[] = [
     stage: "In Development",
   },
 ];
+
+export interface Leader {
+  name: string;
+  role: string;
+  initials: string;
+  discipline: string;
+  headline: string;
+  bio: string;
+  strengths: string[];
+  /** Path under /public, e.g. "/leadership/anil-sharma.jpg". Leave undefined until a photograph is supplied. */
+  photo?: string;
+}
+
+export const leaders: Leader[] = [
+  {
+    name: company.founder,
+    role: "Founder",
+    initials: "AS",
+    discipline: "Sales & Marketing",
+    headline: "Turns a product into a habit, and a habit into a market.",
+    bio: "A sales and marketing strategist who reads Indian consumers city by city: what moves a buyer in Gurgaon differs from Indore, and the pitch should too. Anil leads go-to-market across the portfolio: positioning, partnerships, pricing and the ground-level distribution that takes a new brand from first install to everyday use.",
+    strengths: ["Go-to-market", "Brand & positioning", "Partnerships & distribution", "Consumer insight, Bharat to metro"],
+  },
+  {
+    name: company.coFounder,
+    role: "Co-Founder",
+    initials: "VS",
+    discipline: "Technology & Product",
+    headline: "Builds the engine room: platforms made for a billion screens and patchy 4G.",
+    bio: "A technologist who designs products for how India actually uses its phones: vernacular-ready, UPI-native, light on data and fast on budget devices. Vilansh leads product and engineering across the ventures, building one shared technology foundation that lets each new business launch faster than the last.",
+    strengths: ["Product architecture", "Mobile-first & UPI-native", "Scalable platforms", "Data & automation"],
+  },
+];

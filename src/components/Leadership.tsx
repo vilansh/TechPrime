@@ -1,42 +1,24 @@
 import Image from "next/image";
-import { company } from "@/lib/content";
+import { leaders, type Leader } from "@/lib/content";
 import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
 
-type Leader = {
-  name: string;
-  role: string;
-  initials: string;
-  /** Path under /public, e.g. "/leadership/anil-sharma.jpg". Leave undefined until a photograph is supplied. */
-  photo?: string;
-};
-
-const leaders: Leader[] = [
-  { name: company.founder, role: "Founder", initials: "AS" },
-  { name: company.coFounder, role: "Co-Founder", initials: "VS" },
-];
-
-function Portrait({ leader }: { leader: Leader }) {
+function Avatar({ leader }: { leader: Leader }) {
   return (
-    <div className="relative aspect-[4/5] w-full overflow-hidden border border-line bg-ivory-deep">
+    <div className="relative size-16 shrink-0 overflow-hidden rounded-2xl bg-brand md:size-[72px]">
       {leader.photo ? (
         <Image
           src={leader.photo}
           alt={`Portrait of ${leader.name}, ${leader.role} of Tech Prime Global`}
           fill
-          sizes="(min-width: 1024px) 40vw, 90vw"
-          className="object-cover grayscale-[15%] transition duration-700 group-hover:grayscale-0"
+          sizes="72px"
+          className="object-cover"
         />
       ) : (
-        <div aria-hidden className="absolute inset-0">
-          <svg viewBox="0 0 400 500" className="h-full w-full" preserveAspectRatio="xMidYMid slice">
-            <path d="M80 500 V210 A120 120 0 0 1 320 210 V500" fill="none" stroke="#8C9A48" strokeOpacity="0.6" />
-            <path d="M110 500 V220 A90 90 0 0 1 290 220 V500" fill="none" stroke="#0F3D3E" strokeOpacity="0.2" />
-          </svg>
-          <span className="absolute inset-0 grid place-items-center font-display text-[5.5rem] text-brand/80 transition-transform duration-700 group-hover:scale-105">
-            {leader.initials}
-          </span>
-        </div>
+        <span aria-hidden className="grid h-full w-full place-items-center font-display text-xl font-semibold tracking-[-0.02em] text-paper">
+          {leader.initials}
+          <span className="absolute bottom-2.5 right-2.5 size-1.5 rounded-full bg-accent-soft" />
+        </span>
       )}
     </div>
   );
@@ -44,42 +26,55 @@ function Portrait({ leader }: { leader: Leader }) {
 
 export function Leadership() {
   return (
-    <section id="leadership" aria-labelledby="leadership-title" className="bg-paper py-24 md:py-36">
+    <section id="leadership" aria-labelledby="leadership-title" className="bg-paper py-16 md:py-24">
       <div className="container-x">
-        <div className="grid gap-10 lg:grid-cols-12">
+        <div className="grid gap-6 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-6">
             <Reveal>
               <SectionLabel index="05" label="The Founders" />
             </Reveal>
             <Reveal delay={0.08}>
-              <h2 id="leadership-title" className="display mt-8 text-[clamp(2.6rem,5.4vw,5rem)] text-ink">
+              <h2 id="leadership-title" className="display mt-6 text-[clamp(2.4rem,4.4vw,4rem)] text-ink">
                 Leadership
               </h2>
             </Reveal>
           </div>
-          <div className="flex items-end lg:col-span-5 lg:col-start-8">
+          <div className="lg:col-span-5 lg:col-start-8">
             <Reveal delay={0.14}>
-              <p className="text-[16px] leading-[1.8] text-stone">
-                Tech Prime Global is founder-led. Its leadership takes direct ownership of the
-                group&rsquo;s direction, the development of each venture, and the responsibility of
-                building businesses designed to last.
+              <p className="text-[16px] leading-[1.75] text-stone">
+                One founder sells it, one builds it. Market-facing commercial instinct paired with
+                hands-on technology leadership, both focused on Indian consumers.
               </p>
             </Reveal>
           </div>
         </div>
 
-        <div className="mt-16 grid gap-14 md:mt-24 md:grid-cols-2 md:gap-10 lg:gap-16">
+        <div className="mt-10 grid gap-5 md:mt-14 md:grid-cols-2 lg:gap-6">
           {leaders.map((l, i) => (
             <Reveal key={l.name} delay={i * 0.1}>
-              <article className="group">
-                <Portrait leader={l} />
-                <div className="mt-7 flex items-end justify-between gap-6 border-b border-ink pb-6">
-                  <div>
-                    <p className="eyebrow text-brand">{l.role}</p>
-                    <h3 className="display mt-3 text-[2.2rem] text-ink md:text-[2.6rem]">{l.name}</h3>
+              <article className="flex h-full flex-col border border-line bg-ivory/60 p-6 transition-colors duration-500 hover:border-brand/30 md:p-8">
+                <div className="flex items-center gap-4">
+                  <Avatar leader={l} />
+                  <div className="min-w-0">
+                    <h3 className="font-display text-[1.35rem] font-semibold tracking-[-0.02em] text-ink">{l.name}</h3>
+                    <p className="mt-1 text-[13px] text-stone">
+                      <span className="font-medium text-brand">{l.role}</span> · {l.discipline}
+                    </p>
                   </div>
-                  <span className="pb-2 font-display text-sm text-accent">0{i + 1}</span>
                 </div>
+
+                <p className="mt-7 font-display text-[1.3rem] font-medium leading-[1.3] tracking-[-0.02em] text-ink md:text-[1.45rem]">
+                  &ldquo;{l.headline}&rdquo;
+                </p>
+                <p className="mt-4 text-[15px] leading-[1.75] text-stone">{l.bio}</p>
+
+                <ul className="mt-auto flex flex-wrap gap-2 pt-7" aria-label={`${l.name}'s areas of expertise`}>
+                  {l.strengths.map((s) => (
+                    <li key={s} className="rounded-full border border-line bg-paper px-3 py-1 text-[12px] text-ink/80">
+                      {s}
+                    </li>
+                  ))}
+                </ul>
               </article>
             </Reveal>
           ))}

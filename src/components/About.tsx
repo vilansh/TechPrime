@@ -4,7 +4,7 @@ import { CompanyPrinciples } from "./CompanyPrinciples";
 
 export function About() {
   return (
-    <section id="about" aria-labelledby="about-title" className="bg-ivory py-24 md:py-36">
+    <section id="about" aria-labelledby="about-title" className="bg-ivory py-16 md:py-24">
       <div className="container-x">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-5">
@@ -13,7 +13,7 @@ export function About() {
                 <SectionLabel index="01" label="About Tech Prime Global" />
               </Reveal>
               <Reveal delay={0.08}>
-                <h2 id="about-title" className="display mt-8 text-[clamp(2.4rem,4.6vw,4.25rem)] text-ink">
+                <h2 id="about-title" className="display mt-6 text-[clamp(2.4rem,4.6vw,4.25rem)] text-ink">
                   An Ambition to Build <em className="text-stone">Across Industries.</em>
                 </h2>
               </Reveal>
@@ -28,7 +28,7 @@ export function About() {
               </p>
             </Reveal>
             <Reveal delay={0.16}>
-              <div className="mt-10 space-y-6 text-[16px] leading-[1.85] text-stone">
+              <div className="mt-6 space-y-5 text-[16px] leading-[1.85] text-stone">
                 <p>
                   Our approach combines market understanding, technology, operational execution, and
                   customer-centric thinking to create businesses with independent identities and
@@ -44,7 +44,7 @@ export function About() {
             </Reveal>
 
             <Reveal delay={0.2}>
-              <blockquote className="mt-12 border-l border-accent pl-6">
+              <blockquote className="mt-8 border-l border-accent pl-6">
                 <p className="text-[13px] leading-relaxed tracking-[0.02em] text-ink/80">
                   Identify fragmented markets. Build technology-enabled platforms. Simplify the
                   customer experience. Create scalable business models.

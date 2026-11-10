@@ -5,8 +5,8 @@ import { Clock3, MessageCircle, Phone, Star } from "lucide-react";
 /* ------------------------------------------------------------------ */
 export function DriversVisual() {
   return (
-    <div className="grain relative aspect-[4/5] w-full overflow-hidden bg-charcoal">
-      <svg viewBox="0 0 400 500" className="absolute inset-0 h-full w-full" aria-hidden preserveAspectRatio="xMidYMid slice">
+    <div className="grain relative aspect-square w-full overflow-hidden bg-charcoal">
+      <svg viewBox="0 0 400 500" className="absolute inset-0 h-full w-full" aria-hidden preserveAspectRatio="xMidYMax slice">
         <defs>
           <linearGradient id="d24-sky" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0" stopColor="#0F1716" />
@@ -58,10 +58,10 @@ export function DriversVisual() {
         </g>
       </svg>
 
-      <div className="absolute left-5 top-5 flex items-center gap-2 border border-paper/15 bg-black/30 px-3 py-2 text-[11px] text-paper/85 backdrop-blur-sm md:left-7 md:top-7">
+      <div className="absolute bottom-5 left-5 flex items-center gap-2 border border-paper/15 bg-black/40 px-3 py-2 text-[11px] text-paper/85 backdrop-blur-sm md:bottom-7 md:left-7">
         <Clock3 aria-hidden className="size-3.5 text-accent-soft" /> Booked by the hour
       </div>
-      <div className="absolute bottom-5 right-5 max-w-[13rem] border border-accent/30 bg-charcoal/85 p-4 text-paper md:bottom-7 md:right-7">
+      <div className="absolute right-5 top-5 max-w-[13rem] border border-accent/30 bg-charcoal/85 p-4 text-paper md:right-7 md:top-7">
         <p className="eyebrow text-[9px] text-accent-soft">Your vehicle</p>
         <p className="mt-2 font-display text-[15px] leading-snug">A professional driver, behind your wheel.</p>
       </div>
@@ -75,7 +75,7 @@ export function DriversVisual() {
 export function FinderVisual() {
   const bars = [10, 22, 36, 18, 44, 28, 52, 30, 40, 16, 34, 24, 12, 26, 8];
   return (
-    <div className="grain relative aspect-[4/5] w-full overflow-hidden bg-gradient-to-br from-brand-deep via-brand to-brand-ink">
+    <div className="grain relative aspect-square w-full overflow-hidden bg-gradient-to-br from-brand-deep via-brand to-brand-ink">
       <svg viewBox="0 0 400 500" className="absolute inset-0 h-full w-full" aria-hidden preserveAspectRatio="xMidYMid slice">
         <defs>
           <linearGradient id="f-p1" x1="0" y1="0" x2="0" y2="1">
@@ -111,7 +111,7 @@ export function FinderVisual() {
         <path d="M180 430 V150 A90 90 0 0 1 360 150 V430" fill="none" stroke="#D4E27A" strokeOpacity="0.6" />
 
         {/* Voice waveform */}
-        <g transform="translate(70 70)">
+        <g transform="translate(70 90)">
           {bars.map((h, i) => (
             <rect key={i} x={i * 8} y={-h / 2} width="3" height={h} rx="1.5" fill="#D4E27A" opacity={0.45 + (h / 52) * 0.5} />
           ))}
@@ -160,7 +160,7 @@ export function FirstLabVisual() {
     { name: "Diagnostic Provider C", price: 78, tests: 4, best: false },
   ];
   return (
-    <div className="relative aspect-[4/5] w-full overflow-hidden border border-line bg-paper">
+    <div className="relative aspect-square w-full overflow-hidden border border-line bg-paper">
       {/* Specimen-plate grid */}
       <svg viewBox="0 0 400 500" className="absolute inset-0 h-full w-full" aria-hidden preserveAspectRatio="xMidYMid slice">
         {Array.from({ length: 9 }).map((_, r) =>

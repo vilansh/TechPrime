@@ -71,7 +71,7 @@ export function Navbar() {
       </a>
       <nav aria-label="Primary" className="container-x flex h-[76px] items-center justify-between">
         <a href="#home" aria-label="Tech Prime Global — back to top" onClick={() => setOpen(false)}>
-          <Logo />
+          <Logo tone={solid ? "dark" : "light"} />
         </a>
 
         <ul className="hidden items-center gap-9 lg:flex">
@@ -81,7 +81,11 @@ export function Navbar() {
                 href={`#${link.id}`}
                 aria-current={active === link.id ? "true" : undefined}
                 className={`link-draw pb-1 text-[13px] font-medium tracking-[0.02em] transition-colors ${
-                  active === link.id ? "text-brand [background-size:100%_1px]" : "text-ink/75 hover:text-ink"
+                  active === link.id
+                    ? `${solid ? "text-brand" : "text-accent-soft"} [background-size:100%_1px]`
+                    : solid
+                      ? "text-ink/75 hover:text-ink"
+                      : "text-paper/75 hover:text-paper"
                 }`}
               >
                 {link.label}
@@ -93,7 +97,9 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <a
             href="#contact"
-            className="group hidden items-center gap-2 bg-brand px-5 py-3 text-[12px] font-semibold tracking-[0.14em] text-paper uppercase transition-colors duration-300 hover:bg-brand-deep sm:inline-flex"
+            className={`group hidden items-center gap-2 px-5 py-3 text-[12px] font-semibold tracking-[0.14em] uppercase transition-colors duration-300 sm:inline-flex ${
+              solid ? "bg-brand text-paper hover:bg-brand-deep" : "bg-accent-soft text-brand-ink hover:bg-paper"
+            }`}
           >
             Partner With Us
             <ArrowUpRight
@@ -104,7 +110,7 @@ export function Navbar() {
           <button
             ref={toggleRef}
             type="button"
-            className="grid size-11 place-items-center border border-ink/15 text-ink lg:hidden"
+            className={`grid size-11 place-items-center border lg:hidden ${solid ? "border-ink/15 text-ink" : "border-paper/25 text-paper"}`}
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Close menu" : "Open menu"}

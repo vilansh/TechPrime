@@ -65,7 +65,7 @@ export function Navbar() {
     >
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:bg-wine focus:px-4 focus:py-2 focus:text-paper"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:bg-brand focus:px-4 focus:py-2 focus:text-paper"
       >
         Skip to content
       </a>
@@ -81,7 +81,7 @@ export function Navbar() {
                 href={`#${link.id}`}
                 aria-current={active === link.id ? "true" : undefined}
                 className={`link-draw pb-1 text-[13px] font-medium tracking-[0.02em] transition-colors ${
-                  active === link.id ? "text-wine [background-size:100%_1px]" : "text-ink/75 hover:text-ink"
+                  active === link.id ? "text-brand [background-size:100%_1px]" : "text-ink/75 hover:text-ink"
                 }`}
               >
                 {link.label}
@@ -93,7 +93,7 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <a
             href="#contact"
-            className="group hidden items-center gap-2 bg-wine px-5 py-3 text-[12px] font-semibold tracking-[0.14em] text-paper uppercase transition-colors duration-300 hover:bg-wine-deep sm:inline-flex"
+            className="group hidden items-center gap-2 bg-brand px-5 py-3 text-[12px] font-semibold tracking-[0.14em] text-paper uppercase transition-colors duration-300 hover:bg-brand-deep sm:inline-flex"
           >
             Partner With Us
             <ArrowUpRight
@@ -134,7 +134,7 @@ export function Navbar() {
                     className="flex items-baseline justify-between py-5"
                   >
                     <span className="display text-3xl text-ink">{link.label}</span>
-                    <span className="font-serif text-sm italic text-gold">0{i + 1}</span>
+                    <span className="font-display text-sm text-accent">0{i + 1}</span>
                   </a>
                 </li>
               ))}
@@ -143,7 +143,7 @@ export function Navbar() {
               <a
                 href="#contact"
                 onClick={() => setOpen(false)}
-                className="flex w-full items-center justify-center gap-2 bg-wine px-5 py-4 text-[12px] font-semibold tracking-[0.14em] text-paper uppercase"
+                className="flex w-full items-center justify-center gap-2 bg-brand px-5 py-4 text-[12px] font-semibold tracking-[0.14em] text-paper uppercase"
               >
                 Partner With Us <ArrowUpRight aria-hidden className="size-3.5" />
               </a>

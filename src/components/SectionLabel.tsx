@@ -9,8 +9,8 @@ export function SectionLabel({ index, label, tone = "light" }: SectionLabelProps
   const dark = tone === "dark";
   return (
     <div className="flex items-center gap-4">
-      <span className={`font-serif text-sm italic ${dark ? "text-gold-soft" : "text-wine"}`}>{index}</span>
-      <span aria-hidden className={`h-px w-10 ${dark ? "bg-gold/60" : "bg-gold"}`} />
+      <span className={`font-display text-sm ${dark ? "text-accent-soft" : "text-brand"}`}>{index}</span>
+      <span aria-hidden className={`h-px w-10 ${dark ? "bg-accent/60" : "bg-accent"}`} />
       <span className={`eyebrow ${dark ? "text-paper/70" : "text-stone"}`}>{label}</span>
     </div>
   );

@@ -23,8 +23,8 @@ export function Hero() {
       <div className="container-x relative grid gap-14 pb-16 pt-14 md:pt-20 lg:grid-cols-12 lg:gap-10 lg:pb-24 lg:pt-24">
         <div className="flex flex-col justify-center lg:col-span-7 lg:pr-6">
           <Reveal>
-            <p className="eyebrow flex items-center gap-4 text-wine">
-              <span aria-hidden className="h-px w-10 bg-gold" />
+            <p className="eyebrow flex items-center gap-4 text-brand">
+              <span aria-hidden className="h-px w-10 bg-accent" />
               A Multi-Venture Business Group
             </p>
           </Reveal>
@@ -35,7 +35,7 @@ export function Hero() {
               className="display mt-8 text-[clamp(3rem,7.4vw,7.25rem)] text-ink"
             >
               Building Businesses.
-              <span className="mt-1 block italic text-wine">
+              <span className="mt-1 block text-stone">
                 Creating What&rsquo;s Next.
               </span>
             </h1>
@@ -53,14 +53,14 @@ export function Hero() {
             <div className="mt-11 flex flex-col gap-4 sm:flex-row sm:items-center">
               <a
                 href="#ventures"
-                className="group inline-flex items-center justify-center gap-3 bg-wine px-7 py-4 text-[12px] font-semibold tracking-[0.16em] text-paper uppercase transition-colors duration-300 hover:bg-wine-deep"
+                className="group inline-flex items-center justify-center gap-3 bg-brand px-7 py-4 text-[12px] font-semibold tracking-[0.16em] text-paper uppercase transition-colors duration-300 hover:bg-brand-deep"
               >
                 Explore Our Ventures
                 <ArrowRight aria-hidden className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-3 border border-ink/20 px-7 py-4 text-[12px] font-semibold tracking-[0.16em] text-ink uppercase transition-colors duration-300 hover:border-wine hover:text-wine"
+                className="inline-flex items-center justify-center gap-3 border border-ink/20 px-7 py-4 text-[12px] font-semibold tracking-[0.16em] text-ink uppercase transition-colors duration-300 hover:border-brand hover:text-brand"
               >
                 Connect With Us
               </a>
@@ -91,8 +91,8 @@ export function Hero() {
                 {m.label}
               </dt>
               <dd
-                className={`display order-1 text-wine ${
-                  m.small ? "text-[2rem] italic md:text-[2.6rem]" : "text-[2.6rem] md:text-[3.4rem]"
+                className={`display order-1 text-brand ${
+                  m.small ? "text-[2rem] md:text-[2.6rem]" : "text-[2.6rem] md:text-[3.4rem]"
                 }`}
               >
                 {m.value}
@@ -103,7 +103,7 @@ export function Hero() {
       </div>
 
       <div className="container-x hidden justify-end py-5 lg:flex">
-        <a href="#about" className="eyebrow inline-flex items-center gap-2 text-stone hover:text-wine">
+        <a href="#about" className="eyebrow inline-flex items-center gap-2 text-stone hover:text-brand">
           Scroll <ArrowDown aria-hidden className="size-3.5" />
         </a>
       </div>

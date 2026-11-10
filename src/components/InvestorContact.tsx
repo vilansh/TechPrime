@@ -8,7 +8,7 @@ const conversationMailto = `${mailto}?subject=${encodeURIComponent("Starting a c
 
 export function InvestorContact() {
   return (
-    <section id="contact" aria-labelledby="contact-title" className="grain relative bg-wine-ink text-paper">
+    <section id="contact" aria-labelledby="contact-title" className="grain relative bg-brand-ink text-paper">
       <div className="container-x grid gap-16 py-24 md:py-36 lg:grid-cols-12 lg:gap-12">
         <div className="lg:col-span-6">
           <Reveal>
@@ -16,7 +16,7 @@ export function InvestorContact() {
           </Reveal>
           <Reveal delay={0.08}>
             <h2 id="contact-title" className="display mt-8 text-[clamp(2.8rem,6vw,5.6rem)]">
-              Let&rsquo;s Build <em className="text-gold-soft">What&rsquo;s Next.</em>
+              Let&rsquo;s Build <em className="text-accent-soft">What&rsquo;s Next.</em>
             </h2>
           </Reveal>
           <Reveal delay={0.14}>
@@ -36,14 +36,14 @@ export function InvestorContact() {
             <div className="mt-12 flex flex-col gap-4 sm:flex-row">
               <a
                 href={conversationMailto}
-                className="group inline-flex items-center justify-center gap-3 bg-gold px-7 py-4 text-[12px] font-semibold tracking-[0.16em] text-wine-ink uppercase transition-colors duration-300 hover:bg-gold-soft"
+                className="group inline-flex items-center justify-center gap-3 bg-accent px-7 py-4 text-[12px] font-semibold tracking-[0.16em] text-brand-ink uppercase transition-colors duration-300 hover:bg-accent-soft"
               >
                 Start a Conversation
                 <ArrowUpRight aria-hidden className="size-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </a>
               <a
                 href={mailto}
-                className="inline-flex items-center justify-center gap-3 border border-paper/30 px-7 py-4 text-[12px] font-semibold tracking-[0.16em] uppercase transition-colors duration-300 hover:border-gold-soft hover:text-gold-soft"
+                className="inline-flex items-center justify-center gap-3 border border-paper/30 px-7 py-4 text-[12px] font-semibold tracking-[0.16em] uppercase transition-colors duration-300 hover:border-accent-soft hover:text-accent-soft"
               >
                 Write to Us
               </a>
@@ -53,7 +53,7 @@ export function InvestorContact() {
           <Reveal delay={0.24}>
             <dl className="mt-16 grid gap-8 border-t border-paper/15 pt-10 sm:grid-cols-2">
               <div>
-                <dt className="eyebrow flex items-center gap-2 text-[10px] text-gold-soft">
+                <dt className="eyebrow flex items-center gap-2 text-[10px] text-accent-soft">
                   <Mail aria-hidden className="size-3.5" /> Email
                 </dt>
                 <dd className="mt-3">
@@ -63,7 +63,7 @@ export function InvestorContact() {
                 </dd>
               </div>
               <div>
-                <dt className="eyebrow flex items-center gap-2 text-[10px] text-gold-soft">
+                <dt className="eyebrow flex items-center gap-2 text-[10px] text-accent-soft">
                   <MapPin aria-hidden className="size-3.5" /> Corporate Address
                 </dt>
                 <dd className="mt-3 text-[15px] leading-relaxed text-paper">

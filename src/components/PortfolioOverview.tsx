@@ -17,11 +17,11 @@ function EcosystemGraphic() {
       </title>
 
       {/* Umbrella arc */}
-      <path d="M90 250 A410 190 0 0 1 910 250" fill="none" stroke="#B69A70" strokeOpacity="0.5" />
-      <path d="M140 250 A360 150 0 0 1 860 250" fill="none" stroke="#B69A70" strokeOpacity="0.25" strokeDasharray="2 6" />
+      <path d="M90 250 A410 190 0 0 1 910 250" fill="none" stroke="#8C9A48" strokeOpacity="0.5" />
+      <path d="M140 250 A360 150 0 0 1 860 250" fill="none" stroke="#8C9A48" strokeOpacity="0.25" strokeDasharray="2 6" />
 
       {/* Ground line */}
-      <line x1="40" y1="330" x2="960" y2="330" stroke="#191919" strokeOpacity="0.15" />
+      <line x1="40" y1="330" x2="960" y2="330" stroke="#121514" strokeOpacity="0.15" />
 
       {/* Connections */}
       {nodeX.map((x) => (
@@ -29,32 +29,32 @@ function EcosystemGraphic() {
           key={x}
           d={`M500 104 C500 180 ${x} 170 ${x} 236`}
           fill="none"
-          stroke="#641C32"
+          stroke="#0F3D3E"
           strokeOpacity="0.55"
         />
       ))}
 
       {/* Parent */}
-      <rect x="370" y="40" width="260" height="64" fill="#641C32" />
-      <text x="500" y="70" textAnchor="middle" fontFamily="var(--font-playfair)" fontSize="19" letterSpacing="3" fill="#F8F6F2">
+      <rect x="370" y="40" width="260" height="64" fill="#0F3D3E" />
+      <text x="500" y="70" textAnchor="middle" fontFamily="var(--font-display)" fontSize="19" letterSpacing="3" fill="#F8F9F7">
         TECH PRIME GLOBAL
       </text>
-      <text x="500" y="90" textAnchor="middle" fontFamily="var(--font-inter)" fontSize="9" letterSpacing="3" fill="#D8C7A8">
+      <text x="500" y="90" textAnchor="middle" fontFamily="var(--font-inter)" fontSize="9" letterSpacing="3" fill="#D4E27A">
         PARENT COMPANY
       </text>
 
       {/* Ventures */}
       {ventures.map((v, i) => (
         <g key={v.key}>
-          <rect x={nodeX[i] - 110} y="236" width="220" height="94" fill="#F8F6F2" stroke="#DDD5C8" />
-          <rect x={nodeX[i] - 110} y="236" width="220" height="2" fill="#B69A70" />
-          <text x={nodeX[i] - 92} y="266" fontFamily="var(--font-playfair)" fontStyle="italic" fontSize="13" fill="#B69A70">
+          <rect x={nodeX[i] - 110} y="236" width="220" height="94" fill="#F8F9F7" stroke="#D5DCD7" />
+          <rect x={nodeX[i] - 110} y="236" width="220" height="2" fill="#8C9A48" />
+          <text x={nodeX[i] - 92} y="266" fontFamily="var(--font-display)" fontSize="13" fill="#8C9A48">
             {v.index}
           </text>
-          <text x={nodeX[i] - 92} y="294" fontFamily="var(--font-playfair)" fontSize="24" fill="#191919">
+          <text x={nodeX[i] - 92} y="294" fontFamily="var(--font-display)" fontSize="24" fill="#121514">
             {v.name}
           </text>
-          <text x={nodeX[i] - 92} y="316" fontFamily="var(--font-inter)" fontSize="10" letterSpacing="2" fill="#77736F">
+          <text x={nodeX[i] - 92} y="316" fontFamily="var(--font-inter)" fontSize="10" letterSpacing="2" fill="#66706C">
             {v.shortIndustry.toUpperCase()}
           </text>
         </g>
@@ -66,17 +66,17 @@ function EcosystemGraphic() {
 function EcosystemMobile() {
   return (
     <div className="md:hidden">
-      <div className="mx-auto w-fit bg-wine px-6 py-4 text-center">
-        <p className="font-serif tracking-[0.2em] text-paper">TECH PRIME GLOBAL</p>
-        <p className="eyebrow mt-1 text-[9px] text-gold-soft">Parent company</p>
+      <div className="mx-auto w-fit bg-brand px-6 py-4 text-center">
+        <p className="font-display tracking-[0.2em] text-paper">TECH PRIME GLOBAL</p>
+        <p className="eyebrow mt-1 text-[9px] text-accent-soft">Parent company</p>
       </div>
-      <div className="mx-auto h-8 w-px bg-wine/50" />
-      <div className="relative border-l border-wine/40 pl-6">
+      <div className="mx-auto h-8 w-px bg-brand/50" />
+      <div className="relative border-l border-brand/40 pl-6">
         {ventures.map((v) => (
           <div key={v.key} className="relative mb-4 border border-line bg-paper p-4 last:mb-0">
-            <span className="absolute -left-6 top-1/2 h-px w-6 bg-wine/40" />
-            <span className="font-serif text-xs italic text-gold">{v.index}</span>
-            <p className="font-serif text-xl text-ink">{v.name}</p>
+            <span className="absolute -left-6 top-1/2 h-px w-6 bg-brand/40" />
+            <span className="font-display text-xs text-accent">{v.index}</span>
+            <p className="font-display text-xl text-ink">{v.name}</p>
             <p className="eyebrow mt-1 text-[10px] text-stone">{v.shortIndustry}</p>
             <p className="mt-2 text-[14px] text-stone">{v.focus} · {v.stage}</p>
           </div>
@@ -97,7 +97,7 @@ export function PortfolioOverview() {
             </Reveal>
             <Reveal delay={0.08}>
               <h2 id="portfolio-title" className="display mt-8 text-[clamp(2.4rem,4.8vw,4.5rem)] text-ink">
-                Expanding Into Markets <em className="text-wine">That Matter.</em>
+                Expanding Into Markets <em className="text-stone">That Matter.</em>
               </h2>
             </Reveal>
           </div>
@@ -136,15 +136,15 @@ export function PortfolioOverview() {
                   <tr key={v.key} className="group border-b border-line transition-colors hover:bg-paper/70">
                     <th scope="row" className="py-6 pr-6 font-normal">
                       <a href={`#venture-${v.key}`} className="flex items-baseline gap-4">
-                        <span className="font-serif text-sm italic text-gold">{v.index}</span>
-                        <span className="font-serif text-2xl text-ink group-hover:text-wine">{v.name}</span>
+                        <span className="font-display text-sm text-accent">{v.index}</span>
+                        <span className="font-display text-2xl text-ink group-hover:text-brand">{v.name}</span>
                       </a>
                     </th>
                     <td className="py-6 pr-6 text-[15px] text-ink">{v.shortIndustry}</td>
                     <td className="py-6 pr-6 text-[15px] text-stone">{v.focus}</td>
                     <td className="py-6 text-[13px] text-stone">
                       <span className="inline-flex items-center gap-2">
-                        <span aria-hidden className="size-1.5 rounded-full bg-gold" />
+                        <span aria-hidden className="size-1.5 rounded-full bg-accent" />
                         {v.stage}
                       </span>
                     </td>

@@ -1,17 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  display: "swap",
-});
-
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -57,14 +50,14 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#F4F0E9",
+  themeColor: "#EEF1EE",
   width: "device-width",
   initialScale: 1,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable} antialiased`}>
+    <html lang="en" className={`${inter.variable} antialiased`}>
       <body className="min-h-screen overflow-x-clip">{children}</body>
     </html>
   );

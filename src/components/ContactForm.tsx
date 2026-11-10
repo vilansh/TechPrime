@@ -88,7 +88,7 @@ export function ContactForm() {
   const inputBase =
     "mt-2 w-full border-0 border-b bg-transparent px-0 py-3 text-[16px] text-paper placeholder:text-paper/30 transition-colors focus:outline-none focus:ring-0";
   const borderFor = (k: FieldKey) =>
-    show(k) ? "border-[#E8A3B0]" : "border-paper/25 focus:border-gold-soft";
+    show(k) ? "border-[#F4A99A]" : "border-paper/25 focus:border-accent-soft";
 
   const field = (k: FieldKey, label: string, opts: { type?: string; optional?: boolean; autoComplete?: string; hint?: string }) => (
     <div>
@@ -110,7 +110,7 @@ export function ContactForm() {
         className={`${inputBase} ${borderFor(k)}`}
       />
       {show(k) && (
-        <p id={`cf-${k}-err`} className="mt-2 text-[12.5px] text-[#F0B8C2]">
+        <p id={`cf-${k}-err`} className="mt-2 text-[12.5px] text-[#F7BDB0]">
           {show(k)}
         </p>
       )}
@@ -119,7 +119,7 @@ export function ContactForm() {
 
   return (
     <form noValidate onSubmit={onSubmit} aria-labelledby="contact-form-title" className="space-y-8">
-      <p id="contact-form-title" className="eyebrow text-gold-soft">
+      <p id="contact-form-title" className="eyebrow text-accent-soft">
         Send an enquiry
       </p>
       <div className="grid gap-8 sm:grid-cols-2">
@@ -144,7 +144,7 @@ export function ContactForm() {
           className={`${inputBase} resize-y ${borderFor("message")}`}
         />
         {show("message") && (
-          <p id="cf-message-err" className="mt-2 text-[12.5px] text-[#F0B8C2]">
+          <p id="cf-message-err" className="mt-2 text-[12.5px] text-[#F7BDB0]">
             {show("message")}
           </p>
         )}
@@ -154,7 +154,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={status.kind === "sending"}
-          className="group inline-flex shrink-0 items-center justify-center gap-3 whitespace-nowrap bg-paper px-7 py-4 text-[12px] font-semibold tracking-[0.16em] text-wine uppercase transition-colors duration-300 hover:bg-gold-soft disabled:opacity-70"
+          className="group inline-flex shrink-0 items-center justify-center gap-3 whitespace-nowrap bg-paper px-7 py-4 text-[12px] font-semibold tracking-[0.16em] text-brand uppercase transition-colors duration-300 hover:bg-accent-soft disabled:opacity-70"
         >
           {status.kind === "sending" ? (
             <>
@@ -176,20 +176,20 @@ export function ContactForm() {
 
       <div aria-live="polite" className="min-h-[1.5rem] text-[14px] leading-relaxed">
         {status.kind === "sent" && (
-          <p className="text-gold-soft">Thank you — your message has been sent. We&rsquo;ll be in touch.</p>
+          <p className="text-accent-soft">Thank you — your message has been sent. We&rsquo;ll be in touch.</p>
         )}
         {status.kind === "mailto" && (
           <p className="text-paper/80">
             Your email app should now open with the message ready to send. If it didn&rsquo;t, write to us
             directly at{" "}
-            <a href={`mailto:${company.email}`} className="text-gold-soft underline underline-offset-4">
+            <a href={`mailto:${company.email}`} className="text-accent-soft underline underline-offset-4">
               {company.email}
             </a>
             .
           </p>
         )}
         {status.kind === "error" && (
-          <p className="text-[#F0B8C2]">
+          <p className="text-[#F7BDB0]">
             We couldn&rsquo;t send your message just now. Please try again, or email{" "}
             <a href={`mailto:${company.email}`} className="underline underline-offset-4">
               {company.email}

@@ -3,7 +3,7 @@ import { SectionLabel } from "./SectionLabel";
 
 export function Vision() {
   return (
-    <section id="vision" aria-labelledby="vision-title" className="grain relative overflow-hidden bg-wine text-paper">
+    <section id="vision" aria-labelledby="vision-title" className="grain relative overflow-hidden bg-brand text-paper">
       {/* Architectural arcs */}
       <svg
         aria-hidden
@@ -11,7 +11,7 @@ export function Vision() {
         className="pointer-events-none absolute -right-48 top-1/2 hidden h-[900px] w-[900px] -translate-y-1/2 lg:block"
       >
         {[380, 320, 260, 200].map((r, i) => (
-          <circle key={r} cx="400" cy="400" r={r} fill="none" stroke="#D8C7A8" strokeOpacity={0.1 + i * 0.05} />
+          <circle key={r} cx="400" cy="400" r={r} fill="none" stroke="#D4E27A" strokeOpacity={0.1 + i * 0.05} />
         ))}
       </svg>
 
@@ -23,13 +23,13 @@ export function Vision() {
         <Reveal delay={0.08}>
           <h2 id="vision-title" className="display mt-10 max-w-5xl text-[clamp(2.6rem,6.2vw,6rem)]">
             Built Around Opportunities.{" "}
-            <em className="text-gold-soft">Driven By Execution.</em>
+            <em className="text-accent-soft">Driven By Execution.</em>
           </h2>
         </Reveal>
 
         <div className="mt-16 grid gap-10 md:mt-24 md:grid-cols-12">
           <Reveal delay={0.12} className="md:col-span-5">
-            <p className="font-serif text-[1.45rem] leading-[1.55] text-paper md:text-[1.65rem]">
+            <p className="font-display text-[1.45rem] leading-[1.55] text-paper md:text-[1.65rem]">
               Our vision is to build a portfolio of independent, customer-focused businesses that
               address meaningful market opportunities.
             </p>
@@ -49,10 +49,10 @@ export function Vision() {
         </div>
 
         <Reveal delay={0.1}>
-          <div className="mt-20 border-t border-gold/40 pt-12 md:mt-28 md:pt-16">
+          <div className="mt-20 border-t border-accent/40 pt-12 md:mt-28 md:pt-16">
             <p className="display max-w-5xl text-[clamp(1.9rem,3.8vw,3.4rem)] leading-[1.15]">
               Different markets. Different challenges.{" "}
-              <span className="italic text-gold-soft">A shared commitment to building better businesses.</span>
+              <span className="text-accent-soft">A shared commitment to building better businesses.</span>
             </p>
           </div>
         </Reveal>

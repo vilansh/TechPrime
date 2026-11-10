@@ -21,20 +21,20 @@ function Wordmark({ venture, dark }: { venture: Venture; dark: boolean }) {
     case "drivers24":
       return (
         <span className={`${base} font-sans font-extrabold tracking-[-0.045em] text-ink`}>
-          Drivers<span className="text-gold">24</span>
+          Drivers<span className="text-accent">24</span>
         </span>
       );
     case "finder":
       return (
-        <span className={`${base} font-serif italic tracking-[-0.03em] ${dark ? "text-paper" : "text-ink"}`}>
-          finder<span className="not-italic text-gold-soft">.</span>
+        <span className={`${base} font-display font-semibold tracking-[-0.055em] ${dark ? "text-paper" : "text-ink"}`}>
+          finder<span className="not-italic text-accent-soft">.</span>
         </span>
       );
     case "firstlab":
       return (
         <span className={`${base} font-sans font-light tracking-[0.06em] text-ink`}>
-          FIRST<span className="font-semibold text-wine">LAB</span>
-          <span className="ml-2 align-top text-[0.4em] font-normal text-wine">+</span>
+          FIRST<span className="font-semibold text-brand">LAB</span>
+          <span className="ml-2 align-top text-[0.4em] font-normal text-brand">+</span>
         </span>
       );
   }
@@ -43,7 +43,7 @@ function Wordmark({ venture, dark }: { venture: Venture; dark: boolean }) {
 const themes: Record<VentureKey, { section: string; dark: boolean }> = {
   drivers24: { section: "bg-paper", dark: false },
   finder: { section: "bg-charcoal grain", dark: true },
-  firstlab: { section: "bg-[#FBFAF7]", dark: false },
+  firstlab: { section: "bg-[#FAFBFA]", dark: false },
 };
 
 function VentureShowcase({ venture, reverse }: { venture: Venture; reverse: boolean }) {
@@ -66,10 +66,10 @@ function VentureShowcase({ venture, reverse }: { venture: Venture; reverse: bool
         {/* Meta strip */}
         <Reveal>
           <div className={`grid grid-cols-2 gap-y-3 border-b pb-5 text-[11px] md:grid-cols-3 ${rule}`}>
-            <span className={`eyebrow ${dark ? "text-gold-soft" : "text-wine"}`}>Venture {venture.index}</span>
+            <span className={`eyebrow ${dark ? "text-accent-soft" : "text-brand"}`}>Venture {venture.index}</span>
             <span className={`eyebrow hidden text-center md:block ${muted}`}>{venture.industry}</span>
             <span className={`eyebrow flex items-center justify-end gap-2 ${muted}`}>
-              <span className={`size-1.5 rounded-full ${dark ? "bg-gold-soft" : "bg-gold"}`} aria-hidden />
+              <span className={`size-1.5 rounded-full ${dark ? "bg-accent-soft" : "bg-accent"}`} aria-hidden />
               {venture.stage}
             </span>
           </div>
@@ -92,7 +92,7 @@ function VentureShowcase({ venture, reverse }: { venture: Venture; reverse: bool
             </Reveal>
 
             <Reveal delay={0.12}>
-              <p className={`display mt-8 text-[1.55rem] italic md:text-[1.9rem] ${dark ? "text-gold-soft" : "text-wine"}`}>
+              <p className={`display mt-8 !font-medium text-[1.55rem] md:text-[1.9rem] ${dark ? "text-accent-soft" : "text-brand"}`}>
                 &ldquo;{venture.tagline}&rdquo;
               </p>
               <p className={`mt-6 max-w-xl text-[16px] leading-[1.8] ${muted}`}>{venture.description}</p>
@@ -104,7 +104,7 @@ function VentureShowcase({ venture, reverse }: { venture: Venture; reverse: bool
                 <ul className="mt-5 grid gap-x-8 gap-y-3 sm:grid-cols-2">
                   {venture.features.map((f) => (
                     <li key={f} className={`flex items-start gap-3 text-[14.5px] leading-snug ${strong} ${dark ? "opacity-90" : ""}`}>
-                      <Minus aria-hidden className={`mt-0.5 size-4 shrink-0 ${dark ? "text-gold-soft" : "text-gold"}`} />
+                      <Minus aria-hidden className={`mt-0.5 size-4 shrink-0 ${dark ? "text-accent-soft" : "text-accent"}`} />
                       {f}
                     </li>
                   ))}
@@ -121,8 +121,8 @@ function VentureShowcase({ venture, reverse }: { venture: Venture; reverse: bool
                   onClick={() => setOpen((v) => !v)}
                   className={`group inline-flex items-center gap-3 border-b pb-2 text-[12px] font-semibold tracking-[0.16em] uppercase transition-colors ${
                     dark
-                      ? "border-gold-soft text-paper hover:text-gold-soft"
-                      : "border-wine text-wine hover:text-wine-deep"
+                      ? "border-accent-soft text-paper hover:text-accent-soft"
+                      : "border-brand text-brand hover:text-brand-deep"
                   }`}
                 >
                   {open ? "Close Venture Brief" : "Explore Venture"}
@@ -144,7 +144,7 @@ function VentureShowcase({ venture, reverse }: { venture: Venture; reverse: bool
                       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className={`mt-8 grid gap-8 border-l pl-6 md:grid-cols-2 ${dark ? "border-gold-soft/50" : "border-gold"}`}>
+                      <div className={`mt-8 grid gap-8 border-l pl-6 md:grid-cols-2 ${dark ? "border-accent-soft/50" : "border-accent"}`}>
                         <div>
                           <p className={`eyebrow ${strong}`}>Business concept</p>
                           <div className={`mt-3 space-y-3 text-[14.5px] leading-[1.75] ${muted}`}>
@@ -155,7 +155,7 @@ function VentureShowcase({ venture, reverse }: { venture: Venture; reverse: bool
                         </div>
                         <div>
                           <p className={`eyebrow ${strong}`}>Positioning</p>
-                          <p className={`mt-3 font-serif text-[1.15rem] leading-[1.6] ${strong}`}>{venture.positioning}</p>
+                          <p className={`mt-3 font-display text-[1.15rem] leading-[1.6] ${strong}`}>{venture.positioning}</p>
                           <p className={`mt-5 text-[12px] ${muted}`}>
                             Industry: {venture.industry}
                             <br />
@@ -188,7 +188,7 @@ export function Ventures() {
               <Reveal delay={0.08}>
                 <h2 id="ventures-title" className="display mt-8 text-[clamp(2.6rem,5.6vw,5.4rem)] text-ink">
                   Three Ventures. Distinct Markets.{" "}
-                  <em className="text-wine">One Vision.</em>
+                  <em className="text-stone">One Vision.</em>
                 </h2>
               </Reveal>
             </div>
@@ -209,13 +209,13 @@ export function Ventures() {
                 <a
                   key={v.key}
                   href={`#venture-${v.key}`}
-                  className={`group flex items-baseline justify-between gap-4 border-b border-line py-5 transition-colors hover:text-wine md:border-b-0 md:py-6 ${
+                  className={`group flex items-baseline justify-between gap-4 border-b border-line py-5 transition-colors hover:text-brand md:border-b-0 md:py-6 ${
                     i > 0 ? "md:border-l md:pl-6" : ""
                   } ${i < 2 ? "md:pr-6" : ""}`}
                 >
                   <span>
-                    <span className="font-serif text-sm italic text-gold">{v.index}</span>
-                    <span className="ml-4 font-serif text-xl text-ink group-hover:text-wine">{v.name}</span>
+                    <span className="font-display text-sm text-accent">{v.index}</span>
+                    <span className="ml-4 font-display text-xl text-ink group-hover:text-brand">{v.name}</span>
                   </span>
                   <span className="eyebrow text-[10px] text-stone">{v.shortIndustry}</span>
                 </a>

@@ -1,21 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  --color-wine: #641c32;
-  --color-wine-deep: #4a1224;
-  --color-wine-ink: #2a0b15;
-  --color-paper: #f8f6f2;
-  --color-ivory: #f4f0e9;
-  --color-ivory-deep: #ebe5da;
-  --color-ink: #191919;
-  --color-charcoal: #22201f;
-  --color-gold: #b69a70;
-  --color-gold-soft: #d8c7a8;
-  --color-stone: #77736f;
-  --color-line: #ddd5c8;
+  /* Brand: deep petrol teal */
+  --color-brand: #0f3d3e;
+  --color-brand-deep: #0a2e2f;
+  --color-brand-ink: #061b1c;
+  /* Neutrals: cool mist */
+  --color-paper: #f8f9f7;
+  --color-ivory: #eef1ee;
+  --color-ivory-deep: #e1e6e2;
+  --color-ink: #121514;
+  --color-charcoal: #121816;
+  --color-stone: #66706c;
+  --color-line: #d5dcd7;
+  /* Accent: citron (bright on dark, olive on light) */
+  --color-accent: #8c9a48;
+  --color-accent-soft: #d4e27a;
 
-  --font-serif: var(--font-playfair), "Times New Roman", serif;
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", var(--font-inter), "Helvetica Neue", Arial, sans-serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", var(--font-inter), "Helvetica Neue", Arial, sans-serif;
 
   --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -36,18 +39,19 @@ body {
   background: var(--color-ivory);
   color: var(--color-ink);
   font-family: var(--font-sans);
-  font-feature-settings: "ss01", "cv11";
+  font-feature-settings: "cv11", "ss03";
+  letter-spacing: -0.003em;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background: var(--color-wine);
+  background: var(--color-brand);
   color: var(--color-paper);
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }
 
@@ -57,15 +61,21 @@ body {
     font-family: var(--font-sans);
     font-size: 0.6875rem;
     font-weight: 600;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
   }
 
   .display {
-    font-family: var(--font-serif);
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    line-height: 1.02;
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    line-height: 1.04;
+  }
+
+  /* Emphasis in headings is carried by colour, not italics */
+  .display em,
+  em {
+    font-style: normal;
   }
 
   .container-x {

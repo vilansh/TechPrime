@@ -30,10 +30,10 @@ function Portrait({ leader }: { leader: Leader }) {
       ) : (
         <div aria-hidden className="absolute inset-0">
           <svg viewBox="0 0 400 500" className="h-full w-full" preserveAspectRatio="xMidYMid slice">
-            <path d="M80 500 V210 A120 120 0 0 1 320 210 V500" fill="none" stroke="#B69A70" strokeOpacity="0.6" />
-            <path d="M110 500 V220 A90 90 0 0 1 290 220 V500" fill="none" stroke="#641C32" strokeOpacity="0.2" />
+            <path d="M80 500 V210 A120 120 0 0 1 320 210 V500" fill="none" stroke="#8C9A48" strokeOpacity="0.6" />
+            <path d="M110 500 V220 A90 90 0 0 1 290 220 V500" fill="none" stroke="#0F3D3E" strokeOpacity="0.2" />
           </svg>
-          <span className="absolute inset-0 grid place-items-center font-serif text-[5.5rem] italic text-wine/80 transition-transform duration-700 group-hover:scale-105">
+          <span className="absolute inset-0 grid place-items-center font-display text-[5.5rem] text-brand/80 transition-transform duration-700 group-hover:scale-105">
             {leader.initials}
           </span>
         </div>
@@ -75,10 +75,10 @@ export function Leadership() {
                 <Portrait leader={l} />
                 <div className="mt-7 flex items-end justify-between gap-6 border-b border-ink pb-6">
                   <div>
-                    <p className="eyebrow text-wine">{l.role}</p>
+                    <p className="eyebrow text-brand">{l.role}</p>
                     <h3 className="display mt-3 text-[2.2rem] text-ink md:text-[2.6rem]">{l.name}</h3>
                   </div>
-                  <span className="pb-2 font-serif text-sm italic text-gold">0{i + 1}</span>
+                  <span className="pb-2 font-display text-sm text-accent">0{i + 1}</span>
                 </div>
               </article>
             </Reveal>

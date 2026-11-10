@@ -14,7 +14,7 @@ export function About() {
               </Reveal>
               <Reveal delay={0.08}>
                 <h2 id="about-title" className="display mt-8 text-[clamp(2.4rem,4.6vw,4.25rem)] text-ink">
-                  An Ambition to Build <em className="text-wine">Across Industries.</em>
+                  An Ambition to Build <em className="text-stone">Across Industries.</em>
                 </h2>
               </Reveal>
             </div>
@@ -22,7 +22,7 @@ export function About() {
 
           <div className="lg:col-span-6 lg:col-start-7">
             <Reveal delay={0.1}>
-              <p className="font-serif text-[1.55rem] leading-[1.5] text-ink md:text-[1.8rem]">
+              <p className="font-display text-[1.55rem] leading-[1.5] text-ink md:text-[1.8rem]">
                 At Tech Prime Global, we believe meaningful businesses are built by solving real
                 problems.
               </p>
@@ -44,7 +44,7 @@ export function About() {
             </Reveal>
 
             <Reveal delay={0.2}>
-              <blockquote className="mt-12 border-l border-gold pl-6">
+              <blockquote className="mt-12 border-l border-accent pl-6">
                 <p className="text-[13px] leading-relaxed tracking-[0.02em] text-ink/80">
                   Identify fragmented markets. Build technology-enabled platforms. Simplify the
                   customer experience. Create scalable business models.

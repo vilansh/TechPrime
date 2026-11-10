@@ -7,25 +7,19 @@ export const contentType = "image/png";
 export default function OpengraphImage() {
   return new ImageResponse(
     (
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          background: "#F4F0E9",
-          fontFamily: "serif",
-        }}
-      >
+      <div style={{ width: "100%", height: "100%", display: "flex", background: "#EEF1EE", fontFamily: "sans-serif" }}>
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", padding: 72, flex: 1 }}>
-          <div style={{ display: "flex", fontSize: 18, letterSpacing: 6, color: "#641C32" }}>A MULTI-VENTURE BUSINESS GROUP</div>
-          <div style={{ display: "flex", flexDirection: "column", fontSize: 76, lineHeight: 1.05, color: "#191919" }}>
-            <span>Building Businesses.</span>
-            <span style={{ color: "#641C32", fontStyle: "italic" }}>Creating What&apos;s Next.</span>
+          <div style={{ display: "flex", fontSize: 18, letterSpacing: 4, color: "#0F3D3E", fontWeight: 600 }}>
+            A MULTI-VENTURE BUSINESS GROUP
           </div>
-          <div style={{ display: "flex", fontSize: 22, letterSpacing: 8, color: "#191919" }}>TECH PRIME GLOBAL</div>
+          <div style={{ display: "flex", flexDirection: "column", fontSize: 76, lineHeight: 1.04, letterSpacing: -3, color: "#121514", fontWeight: 700 }}>
+            <span>Building Businesses.</span>
+            <span style={{ color: "#66706C" }}>Creating What&apos;s Next.</span>
+          </div>
+          <div style={{ display: "flex", fontSize: 22, letterSpacing: 6, color: "#121514", fontWeight: 600 }}>TECH PRIME GLOBAL</div>
         </div>
-        <div style={{ width: 360, display: "flex", alignItems: "flex-end", justifyContent: "center", background: "#F8F6F2", borderLeft: "1px solid #DDD5C8" }}>
-          <div style={{ width: 220, height: 400, background: "#641C32", borderTopLeftRadius: 110, borderTopRightRadius: 110, display: "flex" }} />
+        <div style={{ width: 360, display: "flex", alignItems: "flex-end", justifyContent: "center", background: "#0F3D3E" }}>
+          <div style={{ width: 220, height: 400, background: "#D4E27A", borderTopLeftRadius: 110, borderTopRightRadius: 110, display: "flex" }} />
         </div>
       </div>
     ),

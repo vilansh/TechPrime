@@ -25,7 +25,7 @@ export function CompanyPrinciples() {
       <Reveal>
         <div className="flex items-end justify-between border-b border-ink pb-5">
           <h3 className="eyebrow text-ink">How We Build</h3>
-          <span className="font-serif text-sm italic text-stone">Three principles</span>
+          <span className="font-display text-sm text-stone">Three principles</span>
         </div>
       </Reveal>
       <ol>
@@ -33,7 +33,7 @@ export function CompanyPrinciples() {
           <li key={p.n}>
             <Reveal delay={i * 0.08}>
               <div className="group grid gap-4 border-b border-line py-10 transition-colors duration-500 hover:bg-paper/70 md:grid-cols-12 md:items-baseline md:gap-8 md:px-4 md:py-12">
-                <span className="display text-[3.25rem] text-gold transition-colors duration-500 group-hover:text-wine md:col-span-2 md:text-[4.5rem]">
+                <span className="display text-[3.25rem] text-accent transition-colors duration-500 group-hover:text-brand md:col-span-2 md:text-[4.5rem]">
                   {p.n}
                 </span>
                 <h4 className="display text-[1.85rem] text-ink md:col-span-4 md:text-[2.3rem]">
